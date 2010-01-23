@@ -1,9 +1,17 @@
-<% title "Post" %>
+<% title @post.title %>
 
-<%= render :partial => @post %>
+<div class="meta">
+  2010 年 1 月 22 日
+</div>
 
+<% div_for @post do %>
+  <%= textilize @post.content %>
+<% end %>
+
+<!--
 <p>
   <%= link_to 'Edit', edit_post_path(@post) %> |
   <%= link_to 'Destroy', @post, :method => :delete, :confirm => "Are you sure?" %> |
   <%= link_to 'See All Posts', posts_path %>
 </p>
+-->

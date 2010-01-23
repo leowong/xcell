@@ -1,22 +1,52 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
-    <title><%= h(yield(:title) || "Untitled") %></title>
+    <title>Xcell.me - <%= h(yield(:title) || "Untitled") %></title>
+    <link rel="stylesheet" href="/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print" />
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection" />
+    <![endif]-->
     <%= stylesheet_link_tag 'application' %>
     <%= yield(:head) %>
   </head>
   <body>
-    <div id="container">
-      <%- flash.each do |name, msg| -%>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <%- end -%>
-      
-      <%- if show_title? -%>
-        <h1><%=h yield(:title) %></h1>
-      <%- end -%>
-      
-      <%= yield %>
+    <div id="wrapper">
+      <div id="wrapper2">
+      <div class="container">
+	<div id="header" class="clearfix">
+	  <div class="left">
+	    <div class="right">
+	    </div>
+	  </div>
+	</div>
+	<div id="columns" class="clearfix">
+	  <div id="main" class="span-14">	  
+	  <h1><%= link_to "Xcell.me", "/" %></h1>
+	    <%- flash.each do |name, msg| -%>
+              <%= content_tag :div, msg, :id => "flash_#{name}" %>
+	    <%- end -%>
+	    
+	    <%- if show_title? -%>
+              <h2><%=h yield(:title) %></h2>
+	    <%- end -%>
+	    
+	    <%= yield %>
+	  </div>
+	  <div id="side" class="span-5 last">
+	    <%= render :partial => 'shared/side' %>
+	  </div>
+	</div>
+	<div id="footer">
+	  <div class="left">
+	    <div class="right">
+	      ...
+	    </div>
+	  </div>
+	</div>
+      </div>
+      </div>
     </div>
   </body>
 </html>
