@@ -2,7 +2,7 @@
 	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
-    <title>Xcell.me - <%= h(yield(:title) || "Untitled") %></title>
+    <title>Xcell.me - <%= h(strip_tags(yield(:title)) || "Untitled") %></title>
     <link rel="stylesheet" href="/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection" />
     <link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print" />
     <!--[if lt IE 8]>
@@ -13,23 +13,22 @@
   </head>
   <body>
     <div id="wrapper">
-      <div id="wrapper2">
       <div class="container">
 	<div id="header" class="clearfix">
-	  <div class="left">
-	    <div class="right">
-	    </div>
-	  </div>
+	  <div id="logo"><%= link_to image_tag("logo.png", :alt => "xcell.me"), root_url %></div>
+	  <h1><%= link_to "Xcell.me", root_url %></h1>
+	  <div id="tagline"></div>
+	</div>
+	<div id="separator">
 	</div>
 	<div id="columns" class="clearfix">
-	  <div id="main" class="span-14">	  
-	  <h1><%= link_to "Xcell.me", "/" %></h1>
+	  <div id="main" class="span-15">	  
 	    <%- flash.each do |name, msg| -%>
               <%= content_tag :div, msg, :id => "flash_#{name}" %>
 	    <%- end -%>
 	    
 	    <%- if show_title? -%>
-              <h2><%=h yield(:title) %></h2>
+              <h2><%= yield(:title) %></h2>
 	    <%- end -%>
 	    
 	    <%= yield %>
@@ -39,13 +38,10 @@
 	  </div>
 	</div>
 	<div id="footer">
-	  <div class="left">
-	    <div class="right">
-	      ...
-	    </div>
+	  <div class="tools">
+	    &copy; <%= Time.zone.now.year %>
 	  </div>
 	</div>
-      </div>
       </div>
     </div>
   </body>

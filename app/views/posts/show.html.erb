@@ -1,4 +1,4 @@
-<% title @post.title %>
+<% title link_to(@post.title, @post) %>
 
 <div class="meta">
   2010 年 1 月 22 日
@@ -6,6 +6,7 @@
 
 <% div_for @post do %>
   <%= textilize @post.content %>
+  <%# @post.content %>
 <% end %>
 
 <!--
