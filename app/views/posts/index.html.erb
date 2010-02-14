@@ -1,5 +1,7 @@
 <% title "Posts" %>
 
-<%= render :partial => @posts %>
+<div class="posts">
+  <%= render :partial => @posts %>
+</div>
 
 <%= link_to 'New post', new_post_path %>
