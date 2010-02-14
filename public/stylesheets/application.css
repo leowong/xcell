@@ -5,7 +5,7 @@
 /* body */
 
 body {
-    background: #474747 url(/images/bg.png) 100% 0 repeat-x;
+    background: url("/images/background.gif") repeat-x left top;
 }
 
 hr {
@@ -52,10 +52,8 @@ a:active {
 /* wrapper */
 
 #wrapper {
-    background-color: #F1EFE2;
-    width: 871px;
-    margin: 20px auto;
-    border: 1px solid #999;
+    width: 825px;
+    margin: 0 auto;
     font-family: 'Lucida Grande',Geneva,Verdana,Arial,Helvetica,sans-serif;
     font-size: 12px;
     color: #000000;
@@ -68,8 +66,7 @@ a:active {
 /* header */
 
 #header {
-    background-color: #fff;
-    height: 70px;
+    border-bottom: 2px solid #A12223;
 }
 
 #header h1, #tagline {
@@ -77,27 +74,14 @@ a:active {
 }
 
 #logo img {
-    margin: 25px 0 0 45px;
+    margin: 25px 0 15px 0;
 }
-
-#separator {
-    background-color: #22437F;
-    border-bottom: 1px solid #F5F5F5;
-    border-top: 1px solid #000000;
-    font-size: 0;
-    height: 3px;
-    margin: 0 0px;
-    padding: 0;
-}
-
-/* main column */
 
 #main {
     min-height: 90px;
-    padding: 20px 45px;
+    padding: 20px 45px 20px 0;
     margin: 0;
     background-color: white;
-    border-right: 1px solid #ccc;
 }
 
 #main h2 {
@@ -137,24 +121,20 @@ pre {
 /* side column */
 
 #side ul {
-    background-color: #F1EFE2;
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none;
     margin: 20px 0 0 0;
     padding: 0;
-    border-top: 1px solid #e0e0e0;
+    border-left: 1px solid #DDD;
 }
 
 #side ul li {
     margin: 0;
     padding: 0;
-    border-bottom: 1px solid #E0E0E0;
-    background-color:  #F5F3E6;
 }
 
 #side ul li:hover {
-    border-bottom: 1px solid  #ddd;
 }
 
 #side ul li a {
@@ -164,7 +144,6 @@ pre {
 }
 
 #side ul li.active a {
-    background-color:  #fff;
     color: #000 !important;
     font-weight: bolder;
 }
@@ -180,13 +159,12 @@ pre {
 #footer {
     text-align: right;
     height: 50px;
-    color: #999;
     padding: 0;
     border-top: 1px solid #ccc;
 }
 
 #footer .tools {
-    padding: 16px 24px;
+    padding: 16px 0;
 }
 
 /* flash messages */

@@ -19,8 +19,6 @@
 	  <h1><%= link_to "Xcell.me", root_url %></h1>
 	  <div id="tagline"></div>
 	</div>
-	<div id="separator">
-	</div>
 	<div id="columns" class="clearfix">
 	  <div id="main" class="span-15">	  
 	    <%- flash.each do |name, msg| -%>
@@ -39,7 +37,11 @@
 	</div>
 	<div id="footer">
 	  <div class="tools">
-	    &copy; <%= Time.zone.now.year %>
+	    <!--
+	       Theme adapted from <%# link_to "scribbish", "http://quotedprintable.com/pages/scribbish" %>
+	       &copy; <%= Time.zone.now.year %>
+	      -->
+	    背景图片来自 <%= link_to "scribbish", "http://quotedprintable.com/pages/scribbish" %> 主题
 	  </div>
 	</div>
       </div>
