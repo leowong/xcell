@@ -6,44 +6,39 @@
     <link rel="stylesheet" href="/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection" />
     <link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print" />
     <!--[if lt IE 8]>
-    <link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection" />
+      <link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection" />
     <![endif]-->
     <%= stylesheet_link_tag 'application' %>
     <%= yield(:head) %>
   </head>
   <body>
+    <div id="header" class="clearfix">
+      <h1><%= link_to "XCELL.ME", root_url %></h1>
+      <div id="tagline"></div>
+    </div>
     <div id="wrapper">
       <div class="container">
-	<div id="header" class="clearfix">
-	  <div id="logo"><%= link_to image_tag("logo.png", :alt => "xcell.me"), root_url %></div>
-	  <h1><%= link_to "Xcell.me", root_url %></h1>
-	  <div id="tagline"></div>
-	</div>
 	<div id="columns" class="clearfix">
-	  <div id="main" class="span-15">	  
+	  <div id="main" class="span-15 last">	  
 	    <%- flash.each do |name, msg| -%>
-              <%= content_tag :div, msg, :id => "flash_#{name}" %>
+            <%= content_tag :div, msg, :id => "flash_#{name}" %>
 	    <%- end -%>
 	    
 	    <%- if show_title? -%>
-              <h2><%= yield(:title) %></h2>
+            <h2><%= yield(:title) %></h2>
 	    <%- end -%>
 	    
 	    <%= yield %>
 	  </div>
-	  <div id="side" class="span-5 last">
-	    <%= render :partial => 'shared/side' %>
-	  </div>
 	</div>
-	<div id="footer">
-	  <div class="tools">
-	    <!--
-	       Theme adapted from <%# link_to "scribbish", "http://quotedprintable.com/pages/scribbish" %>
-	       &copy; <%= Time.zone.now.year %>
-	      -->
-	    背景图片来自 <%= link_to "scribbish", "http://quotedprintable.com/pages/scribbish" %> 主题
-	  </div>
+	<div id="side">
+	  <%= render :partial => 'shared/side' %>
 	</div>
+      </div>
+    </div>
+    <div id="footer">
+      <div class="tools">
+	&copy; <%= Time.zone.now.year %> <%= link_to "XCELL.ME", root_url %>
       </div>
     </div>
   </body>
