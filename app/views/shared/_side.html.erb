@@ -2,4 +2,5 @@
   <li class="active"><%= link_to I18n.t('side.all'), root_url %></li>
   <li><%= link_to I18n.t('side.category'), root_url %></li>
   <li><%= link_to I18n.t('side.source'), "http://github.com/leowong/xcell", :target => "_blank" %></li>
+  <li><%= mail_to "leo@xcell.me", I18n.t('side.contact'), :encode => "javascript" %> 
 </ul>
