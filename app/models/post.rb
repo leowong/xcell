@@ -6,4 +6,8 @@ class Post < ActiveRecord::Base
   named_scope :recent, :order => 'published_at DESC'
 
   validates_presence_of :title, :summary, :content, :published_at
+
+  def body
+    summary + content
+  end
 end
