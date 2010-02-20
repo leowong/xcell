@@ -1,5 +1,5 @@
 <ul>
-  <li class="active"><%= link_to "所有文章", root_url %></li>
-  <li><%= link_to "分类主题", root_url %></li>
-  <li><%= link_to "网站源码", "http://github.com/leowong/xcell", :target => "_blank" %></li>
+  <li class="active"><%= link_to I18n.t('side.all'), root_url %></li>
+  <li><%= link_to I18n.t('side.category'), root_url %></li>
+  <li><%= link_to I18n.t('side.source'), "http://github.com/leowong/xcell", :target => "_blank" %></li>
 </ul>
