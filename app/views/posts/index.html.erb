@@ -1,7 +1,7 @@
 <% title "Posts", false %>
 
 <div class="posts">
-  <%= render :partial => @posts %>
+  <%= render :partial => @posts, :locals => { :count => @posts.count } %>
 </div>
 
 <%# link_to 'New post', new_post_path %>

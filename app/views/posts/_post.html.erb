@@ -1,3 +1,16 @@
 <% div_for post do %>
-  <%= post.published_at.to_date %> <%= link_to_unless_current h(post.title), post %>
+  <div>
+    <div class="timestamp">
+      <%= post.published_at.to_date %>
+    </div>
+    <div class="title">
+      <%= link_to_unless_current h(post.title), post %>
+    </div>
+  </div>
+  <div class="summary">
+    <%= strip_tags post.summary %>
+  </div>
+<% end %>
+<% unless post_counter == count - 1 %>
+  <hr />
 <% end %>
