@@ -251,7 +251,7 @@ pre {
 
 #flash_notice, #flash_error {
     padding: 2px 10px;
-    margin: 0 0 12px 160px;
+    margin: 0 0 12px 0;
 }
 
 #flash_notice {
@@ -267,8 +267,8 @@ pre {
 }
 
 #errorExplanation {
-    width: 400px;
-    border: 2px solid #CF0000;
+    width: 500px;
+    /* border: 2px solid #CF0000; */
     padding: 0px;
     padding-bottom: 12px;
     margin-bottom: 20px;
