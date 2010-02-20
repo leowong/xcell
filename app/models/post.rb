@@ -4,4 +4,6 @@ class Post < ActiveRecord::Base
   named_scope :published, lambda { {:conditions => ['published_at <= ?', Time.zone.now]} }
   named_scope :unpublished, lambda { {:conditions => ['published_at > ?', Time.zone.now]} }
   named_scope :recent, :order => 'published_at DESC'
+
+  validates_presence_of :title, :summary, :content, :published_at
 end
