@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_filter :authorize, :only => [:new, :create, :edit, :update, :destroy]
+
   def index
     @posts = Post.published.recent
   end

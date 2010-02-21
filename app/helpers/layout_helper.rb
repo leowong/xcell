@@ -19,4 +19,19 @@ module LayoutHelper
   def javascript(*args)
     content_for(:head) { javascript_include_tag(*args) }
   end
+
+  def admin_link(link)
+    @content_for_admin_links ||= []
+    @content_for_admin_links << link
+  end
+
+  def itemize(links)
+    str = ""
+    unless links.blank?
+      for link in links do
+        str += '<li>' + link + '</li>'
+      end
+    end
+    str
+  end
 end
