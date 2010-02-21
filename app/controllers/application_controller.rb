@@ -7,4 +7,17 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+
+  private
+
+  def admin?
+    session[:admin]
+  end
+  helper_method :admin?
+
+  def authorize
+    unless admin?
+      flash[:error] = "Not authorized to access this page."
+    end
+  end
 end
