@@ -193,7 +193,7 @@ pre {
 
 #side {
     position: absolute;
-    top: 120px;
+    top: 133px;
     left: 0;
     min-width: 200px;
 }
@@ -202,13 +202,13 @@ pre {
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none;
-    margin: 25px 0 0 0;
+    margin: 1em 0 0 0;
     padding: 0;
 }
 
 #side ul li {
-    margin: 0;
     padding: 0;
+    margin: 0 0 0 80px;
 }
 
 #side ul li:hover {
@@ -216,7 +216,6 @@ pre {
 
 #side ul li a {
     padding: 0;
-    margin: 0 0 0 80px;
     /* display: block; */
 }
 
@@ -225,6 +224,11 @@ pre {
 
 #side ul li.active a {
     color: #000;
+}
+
+#side ul.admin li a {
+    color: #555;
+    font-size: 10px;
 }
 
 /* footer */

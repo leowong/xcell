@@ -2,5 +2,11 @@
   <li class="active"><%= link_to I18n.t('side.all'), root_url %></li>
   <li><%= link_to I18n.t('side.category'), root_url %></li>
   <li><%= link_to I18n.t('side.source'), "http://github.com/leowong/xcell", :target => "_blank" %></li>
-  <li><%= mail_to "leo@xcell.me", I18n.t('side.contact'), :encode => "javascript" %> 
+  <li><%= mail_to "leo@xcell.me", I18n.t('side.contact'), :encode => "javascript" %></li>
 </ul>
+<% if admin? %>
+  <ul class="admin">
+    <%= itemize yield(:admin_links) %>
+    <li><%= link_to 'Logout', logout_path %></li>
+  </ul>
+<% end %>

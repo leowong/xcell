@@ -4,4 +4,4 @@
   <%= render :partial => @posts, :locals => { :count => @posts.count } %>
 </div>
 
-<%# link_to 'New post', new_post_path %>
+<%= admin_link link_to 'New Post', new_post_path %>
