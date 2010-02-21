@@ -1,7 +1,10 @@
 <% title link_to(@post.title, @post) %>
 
 <div class="meta">
-  <%= @post.published_at.to_date %>
+  <%= I18n.l @post.published_at.to_date, :format => :long %>发表
+  <% if @post.updated_at.to_date > @post.published_at.to_date %>
+    &nbsp; <%= I18n.l @post.updated_at.to_date, :format => :long %>更新
+  <% end %>
 </div>
 
 <% div_for @post do %>
