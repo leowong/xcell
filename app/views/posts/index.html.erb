@@ -1,7 +1,6 @@
 <% title "Posts", false %>
+<% admin_link link_to 'New Post', new_post_path %>
 
 <div class="posts">
   <%= render @posts %>
 </div>
-
-<% admin_link link_to 'New Post', new_post_path %>

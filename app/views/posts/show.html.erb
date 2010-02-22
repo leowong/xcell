@@ -1,4 +1,7 @@
 <% title link_to(@post.title, @post) %>
+<% admin_link link_to 'Edit', edit_post_path(@post) %>
+<% admin_link link_to 'Destroy', @post, :method => :delete, :confirm => "Are you sure?" %>
+<% admin_link link_to 'See All Posts', posts_path %>
 
 <% div_for(@post, :class => @post.status) do %>
   <div class="meta">
@@ -11,8 +14,3 @@
     <%= @post.body %>
   </div>
 <% end %>
-
-<% admin_link link_to 'Edit', edit_post_path(@post) %>
-<% admin_link link_to 'Destroy', @post, :method => :delete, :confirm => "Are you sure?" %>
-<% admin_link link_to 'See All Posts', posts_path %>
-

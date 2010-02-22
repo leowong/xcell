@@ -1,8 +1,5 @@
 <% title "Edit Post" %>
+<% admin_link link_to "Show", @post %>
+<% admin_link link_to "View All", posts_path %>
 
 <%= render :partial => 'form' %>
-
-<p>
-  <%= link_to "Show", @post %> |
-  <%= link_to "View All", posts_path %>
-</p>
