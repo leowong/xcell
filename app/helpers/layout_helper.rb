@@ -21,8 +21,10 @@ module LayoutHelper
   end
 
   def admin_link(link)
-    @content_for_admin_links ||= []
-    @content_for_admin_links << link
+    if admin? # not really needed, just for double insurance
+      @content_for_admin_links ||= []
+      @content_for_admin_links << link
+    end
   end
 
   def itemize(links)

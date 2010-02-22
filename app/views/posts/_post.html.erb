@@ -1,4 +1,4 @@
-<% div_for post do %>
+<% div_for(post, :class => post.status) do %>
   <div>
     <div class="timestamp">
       <%= post.published_at.to_date %>
@@ -11,6 +11,6 @@
     <%= strip_tags post.summary %>
   </div>
 <% end %>
-<% unless post_counter == count - 1 %>
+<% unless post_counter == @posts.count - 1 %>
   <hr />
 <% end %>

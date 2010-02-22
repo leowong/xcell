@@ -2,11 +2,19 @@ class PostsController < ApplicationController
   before_filter :authorize, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
-    @posts = Post.published.recent
+    if admin?
+      @posts = Post.recent
+    else
+      @posts = Post.published.recent
+    end
   end
   
   def show
-    @post = Post.find(params[:id])
+    if admin?
+      @post = Post.find(params[:id])
+    else
+      @post = Post.published.find(params[:id])
+    end
   end
   
   def new

@@ -5,7 +5,7 @@
 /* body */
 
 body {
-    background: #f2f2f2;
+    background-color: #f2f2f2;
 }
 
 hr {
@@ -141,13 +141,6 @@ a:active {
     font-weight: bold;
 }
 
-#main .meta {
-    font-size: 12px;
-    font-weight: normal;
-    color: #999;
-    margin: 0 0 25px 0;
-}
-
 #main .posts .timestamp {
     float: right;
     color: #999;
@@ -165,6 +158,21 @@ a:active {
 
 #main .posts .title {
     font-size: 14px;
+}
+
+#main .posts .unpublished .timestamp {
+    color: #f60;
+}
+
+#main .post .meta {
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+    margin: 0 0 25px 0;
+}
+
+#main .unpublished .meta {
+    color: #f60;
 }
 
 pre {
