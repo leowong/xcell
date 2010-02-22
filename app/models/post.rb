@@ -6,6 +6,10 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :title, :summary, :content, :published_at
 
+  def updated?
+    updated_at.to_date > published_at.to_date
+  end
+
   def published?
     published_at <= Time.zone.now
   end
