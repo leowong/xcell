@@ -5,9 +5,9 @@
 
 <% div_for(@post, :class => @post.status) do %>
   <div class="meta">
-    <%= I18n.l @post.published_at.to_date, :format => :long %>发表
+    <%= I18n.l(@post.published_at.to_date, :format => :long).gsub(' ', '') %>发表
     <%- if @post.updated? -%>
-      &nbsp; <%= I18n.l @post.updated_at.to_date, :format => :long %>更新
+      &nbsp; <%= I18n.l(@post.updated_at.to_date, :format => :long).gsub(' ', '') %>更新
     <%- end -%>
   </div>
   <div class="body">
