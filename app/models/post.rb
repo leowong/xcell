@@ -1,10 +1,10 @@
 class Post < ActiveRecord::Base
-  attr_accessible :title, :summary, :content, :published_at
+  attr_accessible :title, :name, :summary, :content, :published_at
 
   named_scope :published, lambda { {:conditions => ['published_at <= ?', Time.zone.now]} }
   named_scope :recent, :order => 'published_at DESC'
 
-  validates_presence_of :title, :summary, :content, :published_at
+  validates_presence_of :title, :name, :summary, :content, :published_at
 
   def updated?
     updated_at.to_date > published_at.to_date
@@ -20,5 +20,15 @@ class Post < ActiveRecord::Base
 
   def body
     summary + content
+  end
+
+  def to_param
+    [id, slug].join('-')
+  end
+
+  private
+
+  def slug
+    name.downcase.gsub(/[^0-9a-z]+/, ' ').strip.gsub(' ', '-')
   end
 end

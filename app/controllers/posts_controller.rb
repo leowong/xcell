@@ -11,9 +11,13 @@ class PostsController < ApplicationController
   
   def show
     if admin?
-      @post = Post.find(params[:id])
+      @post = Post.find(params[:id].to_i) # `to_i' is not really needed, just to make logic clear
     else
-      @post = Post.published.find(params[:id])
+      @post = Post.published.find(params[:id].to_i) # same as above
+    end
+    if params[:id] != @post.to_param
+      headers["Status"] = "301 Moved Permanently"
+      redirect_to @post
     end
   end
   
