@@ -4,8 +4,20 @@
 en:
   hello: "Hello world"
 
+  timestamp:
+    published: "published"
+    updated: "updated"
+    ago: "ago"
+
+  form:
+    submit: "Submit"
+
   side:
     all: "All"
     category: "Category"
     source: "Source"
     contact: "Contact"
+
+  comment:
+    page:
+      new_comment: "New Comment"

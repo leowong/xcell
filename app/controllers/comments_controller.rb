@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
+  before_filter :authorize, :only => [:edit, :update, :destroy]
+
   def index
-    @comments = Comment.all
+    @comments = Comment.recent.all
   end
   
   def show
@@ -8,14 +10,15 @@ class CommentsController < ApplicationController
   end
   
   def new
-    @comment = Comment.new
+    flash[:notice] = "To submit a comment, please go to a specific post first."
+    redirect_to root_url
   end
   
   def create
     @comment = Comment.new(params[:comment])
     if @comment.save
       flash[:notice] = "Successfully created comment."
-      redirect_to @comment
+      redirect_to @comment.post
     else
       render :action => 'new'
     end

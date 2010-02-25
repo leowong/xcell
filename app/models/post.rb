@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  has_many :comments, :dependent => :destroy
+
   attr_accessible :title, :name, :summary, :content, :published_at
 
   named_scope :published, lambda { {:conditions => ['published_at <= ?', Time.zone.now]} }

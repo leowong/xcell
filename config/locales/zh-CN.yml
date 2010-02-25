@@ -19,7 +19,7 @@
     formats:
       default: "%Y年%b%d日 %A %H:%M:%S %Z"
       short: "%b%d日 %H:%M"
-      long: "%Y年%b%d日 %H:%M"
+      long: "%Y年%b%e日-%H:%M"
     am: "上午"
     pm: "下午"
   
@@ -107,8 +107,8 @@
     errors:
       template:
         header: 
-          one: "有 1 个错误发生导致「{{model}}」无法被保存。"
-          other: "有 {{count}} 个错误发生导致「{{model}}」无法被保存。"
+          one: "出现 1 个错误导致“{{model}}”无法保存。"
+          other: "出现 {{count}} 个错误导致“{{model}}”无法保存。"
         body: "如下字段出现错误："
       messages:
         record_invalid: "校验失败: {{errors}}"
@@ -118,7 +118,7 @@
         confirmation: "与确认值不匹配"
         accepted: "必须是可被接受的"
         empty: "不能留空"
-        blank: "不能为空字符"
+        blank: "为必填项"
         too_long: "过长（最长为 {{count}} 个字符）"
         too_short: "过短（最短为 {{count}} 个字符）"
         wrong_length: "长度非法（必须为 {{count}} 个字符）"
@@ -131,9 +131,29 @@
         less_than_or_equal_to: "必须小于或等于 {{count}}"
         odd: "必须为单数"
         even: "必须为双数"
+    models:
+      comment: "评论"
+    attributes:
+      comment:
+        name: "称呼"
+        email: "电邮"
+        site_url: "网址"
+        content: "正文"
+
+  timestamp:
+    published: "发表"
+    updated: "更新"
+    ago: "前发表"
+
+  form:
+    submit: "提 交"
 
   side:
     all: "所有文章"
     category: "分类主题"
     source: "网站源码"
     contact: "联系方式"
+
+  comment:
+    page:
+      new_comment: "添加评论"

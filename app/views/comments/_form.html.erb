@@ -1,24 +1,24 @@
 <% form_for @comment do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :post_id %><br />
-    <%= f.text_field :post_id %>
-  </p>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :site_url %><br />
-    <%= f.text_field :site_url %>
-  </p>
-  <p>
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </p>
-  <p><%= f.submit "Submit" %></p>
+  <div>
+    <%= f.hidden_field :post_id %>
+  </div>
+  <div>
+    <%= f.text_field :name %> &nbsp;
+    <%= f.label :name, I18n.t('activerecord.attributes.comment.name') %> <span class="required">*</span>
+  </div>
+  <div>
+    <%= f.text_field :email %> &nbsp;
+    <%= f.label :email, I18n.t('activerecord.attributes.comment.email') %>
+  </div>
+  <div>
+    <%= f.text_field :site_url %> &nbsp;
+    <%= f.label :site_url, I18n.t('activerecord.attributes.comment.site_url') %>
+  </div>
+  <div>
+    <%= f.text_area :content, :rows => 10 %>
+  </div>
+  <div>
+    <%= f.submit I18n.t('form.submit') %>
+  </div>
 <% end %>

@@ -1,25 +1,5 @@
-<% title "Comments" %>
+<% title "Comments", false %>
 
-<table>
-  <tr>
-    <th>Post</th>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Site Url</th>
-    <th>Content</th>
-  </tr>
-  <% for comment in @comments %>
-    <tr>
-      <td><%=h comment.post_id %></td>
-      <td><%=h comment.name %></td>
-      <td><%=h comment.email %></td>
-      <td><%=h comment.site_url %></td>
-      <td><%=h comment.content %></td>
-      <td><%= link_to "Show", comment %></td>
-      <td><%= link_to "Edit", edit_comment_path(comment) %></td>
-      <td><%= link_to "Destroy", comment, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
-
-<p><%= link_to "New Comment", new_comment_path %></p>
+<div class="comments standalone">
+  <%= render :partial => @comments, :locals => { :total => @comments.size } %>
+</div>

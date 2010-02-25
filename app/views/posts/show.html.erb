@@ -5,12 +5,24 @@
 
 <% div_for(@post, :class => @post.status) do %>
   <div class="meta">
-    <%= I18n.l(@post.published_at.to_date, :format => :long).gsub(' ', '') %>发表
+    <%= I18n.l(@post.published_at.to_date, :format => :long).gsub(' ', '') %><%= I18n.t('timestamp.published') %>
     <%- if @post.updated? -%>
-      &nbsp; <%= I18n.l(@post.updated_at.to_date, :format => :long).gsub(' ', '') %>更新
+      &nbsp; <%= I18n.l(@post.updated_at.to_date, :format => :long).gsub(' ', '') %><%= I18n.t('timestamp.updated') %>
     <%- end -%>
   </div>
   <div class="body">
     <%= @post.body %>
   </div>
 <% end %>
+
+<% if (total = @post.comments.size) > 0 %>
+  <div class="comments embeded">
+    <%= render :partial => @post.comments, :locals => { :total => total } %>
+  </div>
+<% else %>
+  <h3><%= I18n.t('comment.page.new_comment') %></h3>
+<% end %>
+
+<div class="add_comment">
+  <%= render :partial => 'comments/form' %>
+</div>

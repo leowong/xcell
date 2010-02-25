@@ -1,0 +1,17 @@
+<% div_for comment do %>
+  <div class="meta">
+    <span class="name">
+      <%= link_to_unless comment.site_url.blank?, h(comment.name), h(comment.site_url), :rel => "nofollow", :target => "_blank" %>
+    </span>
+    &nbsp;
+    <span class="timestamp">
+      <%= time_ago_in_words(comment.created_at.to_date) %><%= I18n.t('timestamp.ago') %>:
+    </span>
+  </div>
+  <div class="content">
+    <%= format_comment comment.content %>
+  </div>
+<% end %>
+<% unless comment_counter == total - 1 %>
+  <hr />
+<% end %>

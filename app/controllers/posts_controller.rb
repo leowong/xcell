@@ -18,6 +18,8 @@ class PostsController < ApplicationController
     if params[:id] != @post.to_param
       headers["Status"] = "301 Moved Permanently"
       redirect_to @post
+    else
+      @comment = Comment.new(:post => @post) # to support this, add `:post' to `attr_accessible' params list
     end
   end
   
