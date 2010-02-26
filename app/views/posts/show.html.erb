@@ -15,9 +15,9 @@
   </div>
 <% end %>
 
-<% if (total = @post.comments.size) > 0 %>
+<% if @post.comments.size > 0 %>
   <div class="comments embeded">
-    <%= render :partial => @post.comments, :locals => { :total => total } %>
+    <%= render :partial => @post.comments %>
   </div>
 <% else %>
   <h3><%= I18n.t('comment.page.new_comment') %></h3>

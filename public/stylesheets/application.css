@@ -136,7 +136,7 @@ a:active {
     float: right;
     color: #777;
     font-size: 10px;
-    margin-top: 3px;
+    margin-top: 2px;
 }
 
 #main .posts .summary {
@@ -191,9 +191,7 @@ pre {
 }
 
 #main .embeded {
-    border-top: 3px solid #ddd;
-    padding-top: 18px;
-    margin-top: 24px;
+    padding-top: 6px;
 }
 
 #main .standalone {
@@ -206,7 +204,17 @@ pre {
 }
 
 #main .comments .comment {
-    margin-bottom: 18px;
+    padding: 18px 0 6px 0;
+    border-top: 1px solid #ddd;
+}
+
+#main .embeded .first {
+    border-top: 2px solid #ddd;
+}
+
+#main .standalone .first {
+    padding-top: 0;
+    border: none;
 }
 
 #main .comments .comment .meta {
@@ -218,10 +226,6 @@ pre {
 
 #main .comments .comment .meta .name {
     font-weight: bold;
-}
-
-#main .comments hr {
-    background-color: #ddd;
 }
 
 #main form .required {
@@ -275,7 +279,7 @@ pre {
 }
 
 #side ul li.active a {
-    color: #000;
+    /* color: #000; */
 }
 
 #side ul.admin li a {

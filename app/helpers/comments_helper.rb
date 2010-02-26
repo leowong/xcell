@@ -10,4 +10,8 @@ module CommentsHelper
       end
     end.join("\n")
   end
+
+  def div_for_comment(comment, comment_counter, &block)
+    div_for(comment, :class => ("first" if comment_counter == 0), &block)
+  end
 end
