@@ -199,36 +199,40 @@ pre {
     margin: 0;
 }
 
-#main .comments p {
+#main #comments p {
     margin: 0 0 1em 0;
 }
 
-#main .comments .comment {
+#main #comments .comment {
     padding: 18px 0 6px 0;
     border-top: 1px solid #ddd;
 }
 
-#main .embeded .first {
+#main #comments.embeded .emphasis {
     border-top: 2px solid #ddd;
 }
 
-#main .standalone .first {
+#main #comments.standalone .emphasis {
     padding-top: 0;
     border: none;
 }
 
-#main .comments .comment .meta {
+#main #comments .comment .meta {
     margin-bottom: 1em;
 }
 
-#main .comments .comment .meta .timestamp {
+#main #comments .comment .meta .timestamp {
 }
 
-#main .comments .comment .meta .name {
+#main #comments .comment .meta .name {
     font-weight: bold;
 }
 
-#main form .required {
+#main .add_comment h3 {
+    margin-top: 8px;
+}
+
+#main .add_comment form .required {
     color: #f00;
 }
 

@@ -1,4 +1,4 @@
-<% div_for_comment(comment, comment_counter) do %>
+<% div_for_comment(comment, comment_counter ||= 0) do %>
   <div class="meta">
     <span class="name">
       <%= link_to_unless comment.site_url.blank?, h(comment.name), h(comment.site_url), :rel => "nofollow", :target => "_blank" %>

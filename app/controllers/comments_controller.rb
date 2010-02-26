@@ -16,11 +16,15 @@ class CommentsController < ApplicationController
   
   def create
     @comment = Comment.new(params[:comment])
-    if @comment.save
-      flash[:notice] = "Successfully created comment."
-      redirect_to @comment.post
-    else
-      render :action => 'new'
+
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to @comment.post }
+        format.js
+      else
+        format.html { render :new }
+        format.js { head :ok }
+      end
     end
   end
   

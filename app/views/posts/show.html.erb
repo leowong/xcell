@@ -15,14 +15,11 @@
   </div>
 <% end %>
 
-<% if @post.comments.size > 0 %>
-  <div class="comments embeded">
-    <%= render :partial => @post.comments %>
-  </div>
-<% else %>
-  <h3><%= I18n.t('comment.page.new_comment') %></h3>
-<% end %>
+<div id="comments" class="embeded">
+  <%= render :partial => @post.comments %>
+</div>
 
 <div class="add_comment">
+  <h3><%= I18n.t('comment.page.new_comment') %></h3>
   <%= render :partial => 'comments/form' %>
 </div>
