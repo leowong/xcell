@@ -16,17 +16,18 @@
     <div id="header" class="clearfix">
       <h1><%= link_to "XCELL.ME", root_url %></h1>
       <div id="tagline"></div>
+      <div id="logo"><%= link_to image_tag("logo.png", :alt => "XCELL.ME"), root_url %></div>
     </div>
     <div id="wrapper">
       <div class="container">
 	<div id="columns" class="clearfix">
 	  <div id="main" class="span-15 last">	  
 	    <%- flash.each do |name, msg| -%>
-            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+              <%= content_tag :div, msg, :id => "flash_#{name}" %>
 	    <%- end -%>
 	    
 	    <%- if show_title? -%>
-            <h2><%= yield(:title) %></h2>
+              <h2><%= yield(:title) %></h2>
 	    <%- end -%>
 	    
 	    <%= yield %>

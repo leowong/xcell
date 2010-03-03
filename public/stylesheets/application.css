@@ -91,13 +91,10 @@ a:active {
 }
 
 #header h1 {
+    display: none;
     width: 590px;
     margin: 0 auto;
     padding: 20px 200px 0 200px;
-}
-
-#tagline {
-    display: none;
 }
 
 #header h1 a {
@@ -106,9 +103,17 @@ a:active {
     text-decoration: none;
 }
 
-#logo img {
+#tagline {
     display: none;
-    margin: 45px 0 15px 0;
+}
+
+#logo {
+    width: 590px;
+    margin: 0 auto;
+}
+
+#logo img {
+    margin-top: 33px;
 }
 
 #main {
