@@ -1,4 +1,5 @@
 .DS_Store
+.bundle
 Capfile
 config/app_config.yml
 config/database.yml
