@@ -5,7 +5,7 @@ class Comment < ActiveRecord::Base
 
   validates_presence_of :post_id, :name, :content
 
-  named_scope :recent, :order => "created_at DESC"
+  named_scope :recent, :order => "created_at"
 
   before_save :add_protocol_to_site_url
 
