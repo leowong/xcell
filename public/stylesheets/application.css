@@ -138,6 +138,16 @@ a:active {
     margin-top: 20px;
 }
 
+#main h4 {
+    color: #000;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+#main h4 span {
+    border-bottom:1px solid #000;
+}
+
 #main .posts .timestamp {
     float: right;
     color: #777;
